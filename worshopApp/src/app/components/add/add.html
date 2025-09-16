@@ -1,0 +1,82 @@
+<form (ngSubmit)="onSubmit()" class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-lg p-4">
+        <h3 class="text-center mb-4">Create Product</h3>
+
+        <!-- Product ID -->
+        <div class="form-group">
+          <label for="id">Product ID</label>
+          <input
+            type="text"
+            id="id"
+            [(ngModel)]="product.id"
+            name="id"
+            class="form-control"
+            required
+          />
+        </div>
+
+        <!-- Product Name -->
+        <div class="form-group">
+          <label for="name">Product Name</label>
+          <input
+            type="text"
+            id="name"
+            [(ngModel)]="product.name"
+            name="name"
+            class="form-control"
+            required
+          />
+        </div>
+
+        <!-- Product Description -->
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input
+            type="text"
+            id="description"
+            [(ngModel)]="product.description"
+            name="description"
+            class="form-control"
+            required
+          />
+        </div>
+
+        <!-- Product Price -->
+        <div class="form-group">
+          <label for="price">Price</label>
+          <input
+            type="number"
+            id="price"
+            [(ngModel)]="product.price"
+            name="price"
+            class="form-control"
+            required
+          />
+        </div>
+
+        <!-- Product Units -->
+        <div class="form-group">
+          <label for="units">Units</label>
+          <input
+            type="number"
+            id="units"
+            [(ngModel)]="product.units"
+            name="units"
+            class="form-control"
+            required
+          />
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group text-center mt-4">
+          <button type="submit" class="btn btn-primary w-100">Create Product</button>
+        </div>
+
+        <!-- Success Message -->
+        <p class="text-center text-success mt-3" *ngIf="response">{{ response }}</p>
+      </div>
+    </div>
+  </div>
+</form>

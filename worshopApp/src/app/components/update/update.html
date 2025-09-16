@@ -1,0 +1,87 @@
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="card shadow-lg p-4">
+      <h3 class="text-center mb-4">Product Details</h3>
+
+      <!-- Loop through the product array and create a form for each product -->
+      <div *ngFor="let product of products; let i = index">
+        <div class="form-group">
+          <label for="id-{{i}}">Product ID</label>
+          <input
+            type="text"
+            id="id-{{i}}"
+            [(ngModel)]="product.id"
+            name="id-{{i}}"
+            class="form-control"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="name-{{i}}">Product Name</label>
+          <input
+            type="text"
+            id="name-{{i}}"
+            [(ngModel)]="product.name"
+            name="name-{{i}}"
+            class="form-control"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="description-{{i}}">Description</label>
+          <input
+            type="text"
+            id="description-{{i}}"
+            [(ngModel)]="product.description"
+            name="description-{{i}}"
+            class="form-control"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="price-{{i}}">Price</label>
+          <input
+            type="text"
+            id="price-{{i}}"
+            [(ngModel)]="product.price"
+            name="price-{{i}}"
+            class="form-control"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="units-{{i}}">Units</label>
+          <input
+            type="text"
+            id="units-{{i}}"
+            [(ngModel)]="product.units"
+            name="units-{{i}}"
+            class="form-control"
+          />
+        </div>
+
+        <!-- Buttons for Update and Delete -->
+        <div class="form-group text-center">
+
+          <!-- Update button when editing is enabled -->
+          <button
+            class="btn btn-success mr-2"
+            (click)="updateProduct(i)"
+          >
+            Update
+          </button>
+
+          <!-- Delete button, triggers the delete method -->
+          <button
+            class="btn btn-danger"
+            (click)="deleteProduct(i)"
+          >
+            Delete
+          </button>
+        </div>
+
+        <hr>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="card shadow-lg p-4">
+      <h3 class="text-center mb-4">Product Details</h3>
+
+      <!-- Loop through the product array and create a form for each product -->
+      <div *ngFor="let product of products; let i = index">
+        <div class="form-group">
+          <label for="id-{{i}}">Product ID</label>
+          <input
+            type="text"
+            id="id-{{i}}"
+            [(ngModel)]="product.id"
+            name="id-{{i}}"
+            class="form-control"
+            readonly
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="name-{{i}}">Product Name</label>
+          <input
+            type="text"
+            id="name-{{i}}"
+            [(ngModel)]="product.name"
+            name="name-{{i}}"
+            class="form-control"
+            readonly
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="description-{{i}}">Description</label>
+          <input
+            type="text"
+            id="description-{{i}}"
+            [(ngModel)]="product.description"
+            name="description-{{i}}"
+            class="form-control"
+            readonly
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="price-{{i}}">Price</label>
+          <input
+            type="number"
+            id="price-{{i}}"
+            [(ngModel)]="product.price"
+            name="price-{{i}}"
+            class="form-control"
+            readonly
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="units-{{i}}">Units</label>
+          <input
+            type="number"
+            id="units-{{i}}"
+            [(ngModel)]="product.units"
+            name="units-{{i}}"
+            class="form-control"
+            readonly
+          />
+        </div>
+        <hr>
+      </div>
+    </div>
+  </div>
+</div>
