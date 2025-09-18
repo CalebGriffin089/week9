@@ -42,10 +42,8 @@ export class addProducts {
     this.httpService.post(`${this.server}/api/add`, this.product).pipe(
       map((response: any) => {
         // Check if the response is successful
-        if (response.valid) {
-          this.response = "Product has been added successfully!";
-        } else {
-          this.response = "Error adding product.";
+        if(!response.err){
+          alert("Id already in use");
         }
       }),
       catchError((error) => {

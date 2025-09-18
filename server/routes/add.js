@@ -30,13 +30,15 @@ router.post("/", async (req, res) => {
             console.log('Products inserted');
         }else{
             console.log("used id");
-            console.log(products);
+            res.json({err: false});
+            return res;
         }
     } catch (err) {
         console.error('Error inserting products:', err);
     }finally {
         await client.close();
     }
+    
 });
 
 module.exports = router;

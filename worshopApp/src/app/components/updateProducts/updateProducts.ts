@@ -22,7 +22,8 @@ interface Product {
 export class updateProducts implements OnInit {
   server = 'http://localhost:3000'; 
   products: Product[] = [];  // Define products as an array of Product
-
+  bool = false;
+  index = 0;
   ngOnInit() {
     // Make an HTTP request to fetch all products
     this.httpService.post(`${this.server}/api/readAllProducts`, '').pipe(
@@ -56,22 +57,27 @@ export class updateProducts implements OnInit {
       })
     ).subscribe();  // Subscribe to trigger the HTTP request
   }
+  message='';
+  showAlert(message: string){
+    return confirm(message)
+  }
 
   // Delete a product
   deleteProduct(index: number) {
-
-    this.httpService.post(`${this.server}/api/removeProduct`, this.products[index]).pipe(
-      map((response: any) => {
-      }),
-      catchError((error) => {
-        console.error('Error during login:', error);
-        return of(null);  // Return null if there is an error
-      })
-    ).subscribe();  // Subscribe to trigger the HTTP request
-
-    this.products.splice(index, 1); // Remove the product from the array
-    // Optionally, send a request to the server to delete the product
-    console.log('Deleted Product at index:', index);
+    if(this.showAlert("are you sure")){
+      this.httpService.post(`${this.server}/api/removeProduct`, this.products[index]).pipe(
+        map((response: any) => {
+        }),
+        catchError((error) => {
+          console.error('Error during login:', error);
+          return of(null);  // Return null if there is an error
+        })
+      ).subscribe();  // Subscribe to trigger the HTTP request
+  
+      this.products.splice(index, 1); // Remove the product from the array
+      // Optionally, send a request to the server to delete the product
+      console.log('Deleted Product at index:', index);
+    }
   }
 
 
