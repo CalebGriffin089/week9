@@ -13,11 +13,11 @@ interface Product {
 }
 
 @Component({
-  selector: 'add',
-  templateUrl: './add.html',
+  selector: 'addProduct',
+  templateUrl: './addProducts.html',
   standalone: false,
 })
-export class Add {
+export class addProducts {
   // Define the server URL
   server = 'http://localhost:3000';
 

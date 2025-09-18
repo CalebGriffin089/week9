@@ -15,11 +15,11 @@ interface Product {
 
 
 @Component({
-  selector: 'update',
-  templateUrl: './update.html',
+  selector: 'updateProducts',
+  templateUrl: './updateProducts.html',
   standalone: false,
 })
-export class Update implements OnInit {
+export class updateProducts implements OnInit {
   server = 'http://localhost:3000'; 
   products: Product[] = [];  // Define products as an array of Product
 

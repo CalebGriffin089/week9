@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { Add } from './components/add/add';
-import { Read } from './components/read/read';
+import { addProducts } from './components/addProducts/addProducts';
+import { Products } from './components/products/products';
 import { Remove } from './components/remove/remove';
-import { Update } from './components/update/update';
+import { updateProducts } from './components/updateProducts/updateProducts';
 const routes: Routes = [
   {
-    path: 'add',
-    component: Add, 
-    title:"add"
+    path: 'addProducts',
+    component: addProducts, 
+    title:"addProducts"
   },
   {
-    path: 'read',
-    component: Read,
-    title: "read"
+    path: 'products',
+    component: Products,
+    title: "products"
   },
   {
     path: 'remove',
@@ -22,9 +22,9 @@ const routes: Routes = [
     title: "remove"
   },
   {
-    path: 'update/:id',
-    component: Update,
-    title: "update"
+    path: 'updateProducts/:id',
+    component: updateProducts,
+    title: "updateProducts"
   }
 ];
 

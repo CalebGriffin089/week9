@@ -4,18 +4,18 @@ import { FormsModule } from '@angular/forms';
 import { provideHttpClient } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing-module';
-import { Add } from './components/add/add';
+import { addProducts } from './components/addProducts/addProducts';
 import { App } from './app';
-import { Read } from './components/read/read';
+import { Products } from './components/products/products';
 import { Remove } from './components/remove/remove';
-import { Update } from './components/update/update';
+import { updateProducts } from './components/updateProducts/updateProducts';
 @NgModule({
   declarations: [
-    Add,
+    addProducts,
     App,
-    Read,
+    Products,
     Remove,
-    Update
+    updateProducts
   ],
   imports: [
     BrowserModule,
